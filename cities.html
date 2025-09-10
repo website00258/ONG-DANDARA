@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Villes du Niger - ONG DANDARA</title>
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇳🇪</text></svg>">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>ONG DANDARA – La Toile du Progrès</h1>
+    <p class="subtitle">Pour un Niger plus inclusif, innovant et solidaire.</p>
+    <button class="theme-toggle" id="themeToggle">🌙</button>
+    <nav id="mainNav" role="navigation" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À Propos</a>
+      <a href="history.html">Histoire</a>
+      <a href="cities.html" class="active" aria-current="page">Villes</a>
+      <a href="index.html#projets">Projets</a>
+      <a href="index.html#galerie">Galerie</a>
+      <a href="index.html#actualites">Actualités</a>
+      <a href="index.html#partenaires">Partenaires</a>
+      <a href="resources.html">Ressources</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main role="main">
+    <article class="page active">
+      <header>
+        <h2>Grandes Villes du Niger</h2>
+        <p>Découvrez les principales métropoles qui façonnent l'identité économique, culturelle et sociale du Niger.</p>
+        <a href="index.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Retour à l'accueil
+        </a>
+      </header>
+
+      <section aria-labelledby="cities-heading">
+        <h3 id="cities-heading">Les Quatre Principales Villes</h3>
+        <div class="cities-grid" role="grid" aria-label="Grille des villes principales du Niger">
+          
+          <article class="city-card" role="gridcell">
+            <h3>Niamey</h3>
+            <div class="city-icon" aria-hidden="true">🏛️</div>
+            <p>
+              <strong>Capitale politique et économique</strong> du Niger, Niamey abrite plus de 1,3 million d'habitants. 
+              Située sur les rives du fleuve Niger, la ville est le centre administratif, commercial et culturel du pays. 
+              Elle héberge l'Université Abdou Moumouni, le Musée National et de nombreuses institutions régionales.
+            </p>
+            <p><strong>Population :</strong> ~1,3 million | <strong>Région :</strong> Niamey</p>
+            <a href="https://fr.wikipedia.org/wiki/Niamey" target="_blank" rel="noopener noreferrer" class="external-link">
+              En savoir plus sur Niamey
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 13V19A2 2 0 0116 21H5A2 2 0 013 19V8A2 2 0 015 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="city-card" role="gridcell">
+            <h3>Zinder</h3>
+            <div class="city-icon" aria-hidden="true">🕌</div>
+            <p>
+              <strong>Ancienne capitale</strong> et deuxième plus grande ville du Niger, Zinder est un important centre historique et commercial. 
+              Connue pour son architecture traditionnelle haoussa et son marché dynamique, elle reste un carrefour culturel majeur 
+              entre le Niger et le Nigeria.
+            </p>
+            <p><strong>Population :</strong> ~400,000 | <strong>Région :</strong> Zinder</p>
+            <a href="https://fr.wikipedia.org/wiki/Zinder" target="_blank" rel="noopener noreferrer" class="external-link">
+              En savoir plus sur Zinder
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 13V19A2 2 0 0116 21H5A2 2 0 013 19V8A2 2 0 015 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="city-card" role="gridcell">
+            <h3>Maradi</h3>
+            <div class="city-icon" aria-hidden="true">🌾</div>
+            <p>
+              <strong>Capitale économique du sud</strong>, Maradi est le centre agricole et commercial du Niger. 
+              Située à la frontière avec le Nigeria, elle joue un rôle crucial dans le commerce transfrontalier. 
+              La ville est réputée pour ses marchés d'arachides et son industrie textile naissante.
+            </p>
+            <p><strong>Population :</strong> ~350,000 | <strong>Région :</strong> Maradi</p>
+            <a href="https://fr.wikipedia.org/wiki/Maradi" target="_blank" rel="noopener noreferrer" class="external-link">
+              En savoir plus sur Maradi
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 13V19A2 2 0 0116 21H5A2 2 0 013 19V8A2 2 0 015 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+          <article class="city-card" role="gridcell">
+            <h3>Agadez</h3>
+            <div class="city-icon" aria-hidden="true">🏜️</div>
+            <p>
+              <strong>Porte du Sahara</strong>, Agadez est une ville historique inscrite au patrimoine mondial de l'UNESCO. 
+              Centre traditionnel de la culture touarègue, elle est célèbre pour sa Grande Mosquée et son minaret emblématique. 
+              La ville est aussi un point de passage vers les mines d'uranium du nord.
+            </p>
+            <p><strong>Population :</strong> ~150,000 | <strong>Région :</strong> Agadez</p>
+            <a href="https://fr.wikipedia.org/wiki/Agadez" target="_blank" rel="noopener noreferrer" class="external-link">
+              En savoir plus sur Agadez
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M18 13V19A2 2 0 0116 21H5A2 2 0 013 19V8A2 2 0 015 6H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+      <section aria-labelledby="urban-development">
+        <h3 id="urban-development">Développement Urbain</h3>
+        <p>
+          Les villes nigériennes connaissent une croissance rapide, avec des défis et des opportunités uniques. 
+          L'urbanisation accélérée nécessite des approches innovantes pour le logement, les infrastructures 
+          et les services publics. L'ONG DANDARA travaille activement dans ces centres urbains pour promouvoir 
+          un développement inclusif et durable.
+        </p>
+        
+        <div class="resource-section">
+          <h4>Enjeux Urbains Actuels</h4>
+          <ul class="facts-list">
+            <li><strong>Croissance démographique :</strong> Taux d'urbanisation de 16% en progression constante</li>
+            <li><strong>Infrastructure :</strong> Besoin d'amélioration des réseaux d'eau, d'électricité et de transport</li>
+            <li><strong>Éducation :</strong> Expansion des établissements scolaires et universitaires</li>
+            <li><strong>Emploi :</strong> Développement du secteur privé et de l'entrepreneuriat</li>
+            <li><strong>Environnement :</strong> Gestion des déchets et préservation des espaces verts</li>
+          </ul>
+        </div>
+      </section>
+
+      <nav class="page-nav" aria-label="Navigation vers d'autres pages">
+        <a href="about.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          À propos du Niger
+        </a>
+        <a href="history.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Histoire du Niger
+        </a>
+        <a href="resources.html" class="back-link">
+          Découvrir les ressources
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </nav>
+    </article>
+  </main>
+
+  <footer>
+    © 2025 ONG DANDARA — La Toile du Progrès | Niger<br>
+    Site propulsé par la communauté pour un progrès solidaire.
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  <script>
+    // Set active navigation for this page
+    document.addEventListener('DOMContentLoaded', () => {
+      setActiveNavItem('cities.html');
+    });
+  </script>
+</body>
+</html>
