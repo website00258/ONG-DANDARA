@@ -2,365 +2,124 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ONG DANDARA - Pour un Niger plus inclusif, innovant et solidaire. Projets d'éducation, empowerment féminin et développement communautaire au Niger.">
+  <meta name="keywords" content="ONG, Niger, développement, éducation, solidarité, inclusion, DANDARA">
+  <meta name="author" content="ONG DANDARA">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ONG DANDARA – La Toile du Progrès">
+  <meta property="og:description" content="Pour un Niger plus inclusif, innovant et solidaire">
+  <meta property="og:locale" content="fr_FR">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ONG DANDARA – La Toile du Progrès">
+  <meta name="twitter:description" content="Pour un Niger plus inclusif, innovant et solidaire">
+  
   <title>ONG DANDARA – La Toile du Progrès</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Variables pour thèmes clair et sombre */
-    :root {
-      --bg-light: #f5fafd;
-      --bg-dark: #121517;
-      --text-light: #ffffff;
-      --text-dark: #1a1a1a;
-
-      --ong-blue: #2176ae;
-      --ong-green: #34a853;
-      --ong-orange: #ff9800;
-      --ong-pink: #ff497c;
-
-      --card-bg-light: #ffffff;
-      --card-bg-dark: #1e242a;
-
-      --shadow-light: 0 4px 18px rgba(44,62,80,0.07);
-      --shadow-dark: 0 4px 18px rgba(0,0,0,0.5);
-
-      --radius: 20px;
-
-      --transition-fast: 0.2s ease-in-out;
-    }
-    body {
-      margin: 0;
-      font-family: 'Nunito', Arial, sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      min-height: 100vh;
-      transition: background-color var(--transition-fast), color var(--transition-fast);
-    }
-    body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: linear-gradient(90deg, var(--ong-blue), var(--ong-green));
-      color: var(--text-light);
-      padding: 24px 0 12px;
-      box-shadow: var(--shadow-light);
-      transition: box-shadow var(--transition-fast);
-    }
-    body.dark header {
-      box-shadow: var(--shadow-dark);
-    }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2em;
-      margin: 0;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-    header .subtitle {
-      text-align: center;
-      font-size: 1rem;
-      margin: 8px 0 0;
-      font-weight: 300;
-    }
-    /* Nav */
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 12px;
-    }
-    nav a {
-      padding: 8px 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      background: rgba(255,255,255,0.15);
-      transition: background-color var(--transition-fast), transform var(--transition-fast);
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.25);
-      transform: translateY(-2px);
-    }
-    nav a.active {
-      background: var(--ong-orange);
-      color: var(--text-light);
-    }
-    /* Theme toggle */
-    .theme-toggle {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255,255,255,0.3);
-      border: none;
-      border-radius: 12px;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      color: var(--text-light);
-      transition: background var(--transition-fast);
-    }
-    .theme-toggle:hover {
-      background: rgba(255,255,255,0.45);
-    }
-    /* Main container */
-    main {
-      max-width: 1000px;
-      margin: 24px auto;
-      padding: 0 16px;
-    }
-    /* Chaque section = “page” */
-    section.page {
-      display: none;
-      animation: fadeIn 0.5s ease;
-      padding: 24px;
-      background-color: var(--card-bg-light);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-light);
-      margin-bottom: 32px;
-      transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
-    }
-    body.dark section.page {
-      background-color: var(--card-bg-dark);
-      box-shadow: var(--shadow-dark);
-    }
-    section.page.active {
-      display: block;
-    }
-    section.page h2 {
-      color: var(--ong-blue);
-      font-family: 'Montserrat', sans-serif;
-      margin-top: 0;
-      margin-bottom: 0.5em;
-      font-size: 1.8em;
-      letter-spacing: 0.5px;
-    }
-    section.page p, section.page li, section.page ul {
-      line-height: 1.6;
-      font-size: 1rem;
-    }
-    /* Présentation */
-    #presentation ul {
-      list-style: disc inside;
-      margin-top: 12px;
-    }
-    /* Projets */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .project-card {
-      background: linear-gradient(120deg, var(--ong-blue) 60%, var(--ong-orange));
-      color: var(--text-light);
-      padding: 16px;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-    }
-    /* Galerie */
-    .gallery-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-      justify-content: center;
-    }
-    .gallery-grid img {
-      width: calc(33% - 12px);
-      max-width: 200px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform var(--transition-fast);
-      background: #ccc;
-    }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-    @media (max-width: 700px) {
-      .gallery-grid img {
-        width: calc(48% - 12px);
-      }
-    }
-    /* Actualités */
-    .news-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      margin-top: 12px;
-    }
-    .news-list li {
-      margin-bottom: 14px;
-      padding: 12px;
-      border-left: 4px solid var(--ong-blue);
-      background: rgba(33,118,174,0.05);
-      border-radius: 8px;
-      transition: background var(--transition-fast);
-    }
-    .news-list li:hover {
-      background: rgba(33,118,174,0.1);
-    }
-    /* Partenaires */
-    .partners-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    .partner-card {
-      background: linear-gradient(90deg, var(--ong-green), var(--ong-orange));
-      color: var(--text-light);
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform var(--transition-fast);
-    }
-    .partner-card:hover {
-      transform: translateY(-3px);
-    }
-    /* Contact */
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 1rem;
-      margin-top: 12px;
-    }
-    /* Pour disposition horizontale sur large écran */
-    @media (min-width: 600px) {
-      .contact-info {
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .contact-info .contact-item {
-        flex: 1 1 45%;
-        display: flex;
-        align-items: center;
-      }
-    }
-    .contact-info .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .contact-info .contact-item a {
-      color: var(--ong-blue);
-      font-weight: 600;
-      transition: color var(--transition-fast);
-    }
-    .contact-info .contact-item a:hover {
-      color: var(--ong-orange);
-    }
-    .contact-form {
-      display: grid;
-      gap: 12px;
-      max-width: 450px;
-      margin-top: 20px;
-    }
-    .contact-form label {
-      font-weight: 600;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1.3px solid #c2e2ff;
-      font-size: 1rem;
-      background: #f8fbff;
-      transition: background var(--transition-fast), border var(--transition-fast);
-    }
-    body.dark .contact-form input,
-    body.dark .contact-form textarea {
-      background: #2a3037;
-      border: 1.3px solid #3a4751;
-      color: var(--text-light);
-    }
-    .contact-form textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
-    .contact-form button {
-      padding: 10px 0;
-      border-radius: 8px;
-      background: var(--ong-blue);
-      color: #fff;
-      border: none;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background var(--transition-fast);
-    }
-    .contact-form button:hover {
-      background: var(--ong-orange);
-    }
-    .success-message {
-      color: var(--ong-green);
-      font-weight: 700;
-      margin-top: 8px;
-      text-align: center;
-    }
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.92rem;
-      margin-top: 40px;
-      background: linear-gradient(90deg, var(--ong-blue), var(--ong-orange));
-      color: #fff;
-      border-radius: var(--radius) var(--radius) 0 0;
-    }
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: none; }
-    }
-  </style>
+  
+  <!-- Favicon (Inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23ff6b35'/><path d='M12 10h8v2h-8zm0 4h8v2h-8zm0 4h6v2h-6z' fill='white'/><circle cx='24' cy='8' r='3' fill='%232d8f6b'/></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>ONG DANDARA – La Toile du Progrès</h1>
-    <p class="subtitle">Pour un Niger plus inclusif, innovant et solidaire.</p>
-    <button class="theme-toggle" id="themeToggle">🌙</button>
-    <nav id="mainNav">
-      <a href="#presentation" data-page="presentation">Présentation</a>
-      <a href="#projets" data-page="projets">Projets</a>
-      <a href="#galerie" data-page="galerie">Galerie</a>
-      <a href="#actualites" data-page="actualites">Actualités</a>
-      <a href="#partenaires" data-page="partenaires">Partenaires</a>
-      <a href="#contact" data-page="contact">Contact</a>
-    </nav>
+    <div class="header-container">
+      <h1>ONG DANDARA – La Toile du Progrès</h1>
+      <p class="subtitle">Pour un Niger plus inclusif, innovant et solidaire.</p>
+      
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Basculer le thème">
+        🌙
+      </button>
+      
+      <!-- Mobile Navigation Toggle -->
+      <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation -->
+      <div class="nav-container">
+        <nav id="mainNav" role="navigation" aria-label="Navigation principale">
+          <a href="#presentation" data-page="presentation">Présentation</a>
+          <a href="#projets" data-page="projets">Projets</a>
+          <a href="#galerie" data-page="galerie">Galerie</a>
+          <a href="#actualites" data-page="actualites">Actualités</a>
+          <a href="#partenaires" data-page="partenaires">Partenaires</a>
+          <a href="#contact" data-page="contact">Contact</a>
+        </nav>
+      </div>
+    </div>
   </header>
 
-  <main>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h2 class="hero-title">Ensemble pour un Niger solidaire</h2>
+      <p class="hero-description">
+        Rejoignez notre mission pour construire un avenir inclusif et durable au cœur du Niger.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projets" class="cta-button cta-primary" data-page="projets">
+          <span>Découvrir nos projets</span>
+          <span>🌱</span>
+        </a>
+        <a href="#contact" class="cta-button cta-secondary" data-page="contact">
+          <span>Nous rejoindre</span>
+          <span>🤝</span>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Hero SVG Illustration -->
+    <div class="hero-illustration" aria-hidden="true">
+      <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="80" fill="var(--niger-orange)" opacity="0.3"/>
+        <circle cx="120" cy="80" r="30" fill="var(--niger-green)" opacity="0.5"/>
+        <circle cx="80" cy="120" r="25" fill="var(--niger-gold)" opacity="0.4"/>
+        <path d="M60 60 L140 140 M140 60 L60 140" stroke="var(--niger-green)" stroke-width="3" opacity="0.6"/>
+      </svg>
+    </div>
+  </section>
+
+  <main role="main">
+    <!-- Random Facts Section -->
+    <section class="facts-section">
+      <h3>Saviez-vous que... ?</h3>
+      <p>Découvrez des faits fascinants sur le Niger</p>
+      
+      <div class="facts-controls">
+        <button id="factButton" class="fact-button">
+          Découvrir un fait sur le Niger
+        </button>
+        <button id="resetFactsButton" class="reset-facts-button">
+          Réinitialiser
+        </button>
+      </div>
+      
+      <div id="factsDisplay" class="facts-display" aria-live="polite">
+        <!-- Facts will be inserted here by JavaScript -->
+      </div>
+    </section>
+
     <!-- Présentation -->
-    <section id="presentation" class="page">
-      <h2>Présentation de l’ONG</h2>
+    <section id="presentation" class="page active">
+      <h2>Présentation de l'ONG</h2>
       <p>
-        <strong>DANDARA</strong> est bien plus qu’une ONG : c’est une vision collective et un moteur d’innovation sociale au Niger. 
-        Notre mission : <em>mobiliser, inspirer et transformer positivement</em> les communautés par des projets concrets, ancrés dans l’inclusion, la solidarité et la durabilité.
+        <strong>DANDARA</strong> est bien plus qu'une ONG : c'est une vision collective et un moteur d'innovation sociale au Niger. 
+        Notre mission : <em>mobiliser, inspirer et transformer positivement</em> les communautés par des projets concrets, ancrés dans l'inclusion, la solidarité et la durabilité.
       </p>
       <ul>
         <li>🌱 Fondée par des citoyens engagés pour le développement local.</li>
         <li>🤝 Plateforme de mise en réseau entre volontaires, partenaires et acteurs locaux.</li>
-        <li>🌍 Axée sur la mobilisation citoyenne et l’impact durable.</li>
+        <li>🌍 Axée sur la mobilisation citoyenne et l'impact durable.</li>
       </ul>
     </section>
 
@@ -368,26 +127,26 @@
     <section id="projets" class="page">
       <h2>Projets phares</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <article class="project-card">
           <h3>FISSI-KOY</h3>
           <p>Accompagnement éducatif et soutien scolaire pour les jeunes des quartiers populaires, avec mentors locaux.</p>
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
           <h3>Koiraa ma Hanane</h3>
-          <p>Empowerment féminin et accès à l’emploi pour les femmes rurales via formations et partenariats.</p>
-        </div>
-        <div class="project-card">
+          <p>Empowerment féminin et accès à l'emploi pour les femmes rurales via formations et partenariats.</p>
+        </article>
+        <article class="project-card">
           <h3>Troc & Don de livre</h3>
-          <p>Promotion de la lecture par l’échange et le don de livres dans les écoles et quartiers défavorisés.</p>
-        </div>
-        <div class="project-card">
+          <p>Promotion de la lecture par l'échange et le don de livres dans les écoles et quartiers défavorisés.</p>
+        </article>
+        <article class="project-card">
           <h3>Éducation Lumière</h3>
           <p>Sensibilisation, appui à la scolarisation, distribution de lampes solaires et outils numériques.</p>
-        </div>
-        <div class="project-card">
+        </article>
+        <article class="project-card">
           <h3>Élan sportif</h3>
-          <p>Initiatives sportives pour la cohésion sociale, l’épanouissement des jeunes et la santé.</p>
-        </div>
+          <p>Initiatives sportives pour la cohésion sociale, l'épanouissement des jeunes et la santé.</p>
+        </article>
       </div>
     </section>
 
@@ -395,13 +154,12 @@
     <section id="galerie" class="page">
       <h2>Galerie</h2>
       <div class="gallery-grid">
-        <!-- Remplace les URLs par tes propres images ou héberge-les si tu veux -->
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Action de terrain">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Travail sur le terrain">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Éducation Lumière">
-        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Jeunes sport">
-        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=400&q=80" alt="Don de livres">
-        <img src="https://images.unsplash.com/photo-1532619187607-5c8e6c0bd5e8?auto=format&fit=crop&w=400&q=80" alt="Volontaires">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Action de terrain" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Travail sur le terrain" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Éducation Lumière" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Jeunes sport" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=400&q=80" alt="Don de livres" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1532619187607-5c8e6c0bd5e8?auto=format&fit=crop&w=400&q=80" alt="Volontaires" loading="lazy">
       </div>
     </section>
 
@@ -409,10 +167,10 @@
     <section id="actualites" class="page">
       <h2>Actualités</h2>
       <ul class="news-list">
-        <li><strong>Juin 2025 :</strong> Lancement du programme “Éducation Lumière” dans la région de Dosso.</li>
-        <li><strong>Mai 2025 :</strong> 2ᵉ édition de “Troc & Don de livre” à Niamey avec +500 participants.</li>
-        <li><strong>Avril 2025 :</strong> Succès du projet “Élan sportif” : plus de 300 jeunes impliqués.</li>
-        <li><strong>Mars 2025 :</strong> Signature d’un partenariat avec <em>Solidarité Afrique</em> pour étendre l’impact.</li>
+        <li><strong>Juin 2025 :</strong> Lancement du programme "Éducation Lumière" dans la région de Dosso.</li>
+        <li><strong>Mai 2025 :</strong> 2ᵉ édition de "Troc & Don de livre" à Niamey avec +500 participants.</li>
+        <li><strong>Avril 2025 :</strong> Succès du projet "Élan sportif" : plus de 300 jeunes impliqués.</li>
+        <li><strong>Mars 2025 :</strong> Signature d'un partenariat avec <em>Solidarité Afrique</em> pour étendre l'impact.</li>
       </ul>
     </section>
 
@@ -427,8 +185,8 @@
         <div class="partner-card">Livres pour Tous</div>
       </div>
       <p style="margin-top:16px;">
-        <strong>Vous souhaitez rejoindre l’aventure ?</strong><br>
-        DANDARA accueille partenaires, volontaires et donateurs désireux d’agir pour le progrès du Niger.
+        <strong>Vous souhaitez rejoindre l'aventure ?</strong><br>
+        DANDARA accueille partenaires, volontaires et donateurs désireux d'agir pour le progrès du Niger.
       </p>
       <p><em>Utilisez la page Contact pour nous écrire ou nous appeler.</em></p>
     </section>
@@ -440,118 +198,61 @@
       <!-- Bloc Nos coordonnées enrichi -->
       <div class="contact-info">
         <div class="contact-item">
-          <!-- Téléphone fixe ou principal -->
-          📞 <span>Téléphone :</span>
+          <span>📞</span>
+          <span>Téléphone :</span>
           <a href="tel:+22796380877">+227 96 38 08 77</a>
         </div>
         <div class="contact-item">
-          <!-- WhatsApp -->
-          💬 <span>WhatsApp :</span>
+          <span>💬</span>
+          <span>WhatsApp :</span>
           <a href="https://wa.me/22796380877" target="_blank" rel="noopener">+227 96 38 08 77</a>
         </div>
         <div class="contact-item">
-          <!-- Email -->
-          ✉️ <span>Email :</span>
+          <span>✉️</span>
+          <span>Email :</span>
           <a href="mailto:entreprise2rc@gmail.com">entreprise2rc@gmail.com</a>
         </div>
         <div class="contact-item">
-          <!-- Page Facebook -->
-          📘 <span>Facebook :</span>
+          <span>📘</span>
+          <span>Facebook :</span>
           <a href="https://www.facebook.com/ONGDandara" target="_blank" rel="noopener">facebook.com/ONGDandara</a>
         </div>
         <div class="contact-item">
-          <!-- Profil LinkedIn -->
-          💼 <span>LinkedIn :</span>
+          <span>💼</span>
+          <span>LinkedIn :</span>
           <a href="https://www.linkedin.com/company/ONGDandara" target="_blank" rel="noopener">linkedin.com/company/ONGDandara</a>
         </div>
         <div class="contact-item">
-          <!-- Autre réseau ou site Web -->
-          🌐 <span>Site Web :</span>
+          <span>🌐</span>
+          <span>Site Web :</span>
           <a href="https://www.dandara-ong.org" target="_blank" rel="noopener">dandara-ong.org</a>
         </div>
       </div>
 
       <!-- Formulaire de contact -->
       <form id="contactForm" class="contact-form">
-        <label for="name">Nom</label>
-        <input type="text" id="name" required placeholder="Votre nom">
-        <label for="email">Email</label>
-        <input type="email" id="email" required placeholder="Votre email">
-        <label for="message">Message</label>
-        <textarea id="message" required placeholder="Votre message"></textarea>
+        <label for="name">Nom *</label>
+        <input type="text" id="name" name="name" required placeholder="Votre nom" autocomplete="name">
+        
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required placeholder="Votre email" autocomplete="email">
+        
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" required placeholder="Votre message"></textarea>
+        
         <button type="submit">Envoyer</button>
-        <div class="success-message" id="formSuccess" style="display:none;">Merci pour votre message !</div>
       </form>
     </section>
   </main>
 
   <footer>
-    © 2025 ONG DANDARA — La Toile du Progrès | Niger<br>
-    Site propulsé par la communauté pour un progrès solidaire.
+    <p>
+      © 2025 ONG DANDARA — La Toile du Progrès | Niger<br>
+      Site propulsé par la communauté pour un progrès solidaire.
+    </p>
   </footer>
 
-  <script>
-    // Gestion du thème clair/sombre
-    const themeToggle = document.getElementById('themeToggle');
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') document.body.classList.add('dark');
-    updateToggleText();
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const newTheme = document.body.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', newTheme);
-      updateToggleText();
-    });
-    function updateToggleText() {
-      if (document.body.classList.contains('dark')) {
-        themeToggle.textContent = '☀️';
-      } else {
-        themeToggle.textContent = '🌙';
-      }
-    }
-
-    // Routage basique en hash : afficher la section correspondant au hash, sinon présentation
-    const pages = Array.from(document.querySelectorAll('section.page'));
-    function showPage(pageId) {
-      pages.forEach(sec => {
-        if (sec.id === pageId) sec.classList.add('active');
-        else sec.classList.remove('active');
-      });
-      // Mettre à jour le lien actif
-      document.querySelectorAll('nav a').forEach(a => {
-        if (a.getAttribute('href') === '#' + pageId) a.classList.add('active');
-        else a.classList.remove('active');
-      });
-    }
-    function handleHash() {
-      const hash = location.hash.replace('#', '');
-      const valid = pages.map(p => p.id);
-      if (valid.includes(hash)) {
-        showPage(hash);
-      } else {
-        showPage('presentation');
-      }
-    }
-    window.addEventListener('hashchange', handleHash);
-    document.addEventListener('DOMContentLoaded', () => {
-      handleHash();
-      // Smooth scroll si on charge avec hash
-      const hash = location.hash;
-      if (hash) {
-        const target = document.querySelector(hash);
-        if (target) target.scrollIntoView({behavior:'smooth'});
-      }
-    });
-
-    // Soumission du formulaire en façade
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formSuccess').style.display = 'block';
-      setTimeout(() => {
-        document.getElementById('formSuccess').style.display = 'none';
-        this.reset();
-      }, 2600);
-    });
-  </script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
